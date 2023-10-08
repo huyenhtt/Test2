@@ -1,0 +1,29 @@
+<div>
+  <h1>Ứng dụng Chuyển đổi Dữ liệu</h1>
+
+  <label>Chọn định dạng nguồn:</label>
+  <select [(ngModel)]="sourceFormat">
+    <option value="string">String</option>
+    <option value="hex">Hex</option>
+    <option value="base64">Base64</option>
+    <!-- Thêm các tùy chọn khác nếu cần -->
+  </select>
+
+  <label>Chọn định dạng đích:</label>
+  <select [(ngModel)]="targetFormat">
+    <option value="hex">Hex</option>
+    <option value="string">String</option>
+    <option value="base64">Base64</option>
+    <!-- Thêm các tùy chọn khác nếu cần -->
+  </select>
+
+  <label>Nhập dữ liệu:</label>
+  <textarea [(ngModel)]="inputData"></textarea>
+
+  <label>Kết quả:</label>
+  <div>
+    <app-result [conversionResult]="conversionResult"></app-result>
+  </div>
+
+  <button (click)="convertData()">Chuyển đổi</button>
+</div>
